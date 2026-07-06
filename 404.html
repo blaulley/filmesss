@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreamTV — Redirecionando...</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: #111;
+      color: #fff;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .logo { font-size: 64px; margin-bottom: 24px; }
+    h1 { font-size: 28px; font-weight: 900; margin-bottom: 12px; }
+    p { color: #888; margin-bottom: 32px; }
+    a {
+      background: #E50914;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+    }
+  </style>
+  <!-- Redireciona automaticamente para a home após 2s -->
+  <script>setTimeout(function(){ window.location.href = '/'; }, 2000);</script>
+</head>
+<body>
+  <div class="logo">🎬</div>
+  <h1>Redirecionando...</h1>
+  <p>Voltando para o StreamTV</p>
+  <a href="/">← Voltar ao Início</a>
+</body>
+</html>
