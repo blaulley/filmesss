@@ -7,7 +7,9 @@
 
 ## 🌐 Demo ao Vivo
 
-**👉 [seuusuario.github.io/streamtv](https://seuusuario.github.io/streamtv)**
+**👉 [Blaulley
+.github.io/streamtv](https://Blaulley
+.github.io/streamtv)**
 
 > Substitua `seuusuario` pelo seu nome de usuário do GitHub após fazer o deploy.
 
