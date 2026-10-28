@@ -1890,7 +1890,7 @@ html, body {
               title="Pesquisar" onclick="navigateTo('search')">🔍</button>
       <!-- Botão adicionar conteúdo -->
       <button class="nav-btn focusable" tabindex="0"
-              title="Adicionar filme/série" onclick="openAddModal()"
+              title="Adicionar filme/série (área administrativa)" onclick="requestAdminAccess()"
               style="background: rgba(229,9,20,0.2); border-color: var(--primary);">＋</button>
     </div>
   </nav>
@@ -2025,12 +2025,6 @@ html, body {
           <div class="movie-actions">
             <button class="btn btn-primary focusable" tabindex="0" id="movie-watch-btn">▶ Assistir Agora</button>
             <button class="btn btn-secondary focusable" tabindex="0" id="movie-fav-btn">🤍 Favoritar</button>
-            <button class="btn btn-secondary focusable" tabindex="0"
-                    onclick="openAddModal(document.getElementById('page-movie').dataset.currentId)"
-                    style="font-size:14px;">✏️ Editar</button>
-            <button class="btn btn-secondary focusable" tabindex="0"
-                    onclick="if(confirm('Remover este conteúdo?')) deleteContent(document.getElementById('page-movie').dataset.currentId)"
-                    style="font-size:14px; border-color: var(--primary); color: var(--primary);">🗑️</button>
           </div>
           <button class="btn btn-secondary focusable" tabindex="0"
                   onclick="showPage('home')"
@@ -3800,6 +3794,20 @@ function selectVideoSource(type) {
   if (type === 'mp4' && hintUrl)  hintUrl.textContent  = 'Cole a URL direta do arquivo MP4';
 }
 
+// ─── ACESSO ADMINISTRATIVO: BOTÃO + ADICIONAR CONTEÚDO ────────────────────────
+// Altere a senha abaixo antes de publicar o site.
+const ADMIN_PASSWORD = "EriFlix@2026";
+
+function requestAdminAccess() {
+  var enteredPassword = window.prompt("Área administrativa\nDigite a senha para adicionar filmes e séries:");
+  if (enteredPassword === null) return;
+  if (enteredPassword === ADMIN_PASSWORD) {
+    openAddModal();
+  } else {
+    window.alert("Senha incorreta. Acesso negado.");
+  }
+}
+
 // ─── MODAL: ABRIR / FECHAR ────────────────────────────────────────────────────
 
 function openAddModal(id) {
@@ -4519,6 +4527,7 @@ window.closePlayer = closePlayer;
 window.filterByCategory = filterByCategory;
 window.handleKey = handleKey;
 window.openAddModal = openAddModal;
+window.requestAdminAccess = requestAdminAccess;
 window.closeAddModal = closeAddModal;
 window.saveContent = saveContent;
 window.deleteContent = deleteContent;
